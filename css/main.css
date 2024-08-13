@@ -1,0 +1,303 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textarea without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+
+body
+{
+    width: 100%;
+    min-height:100vh;
+    background-color: #04364A;
+    display: flex;
+    align-items: center;justify-content: center;
+    font-family: "Nunito", sans-serif;
+}
+
+.container
+{
+    width: 100%;
+    max-width: 1330px;
+    margin: 0 auto;
+
+}
+
+.d-flex
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inner {
+    max-width: 600px;
+    color: white;
+}
+.title {
+    display: inline;
+    font-family: "Kodchasan", sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 78px;   
+    margin-bottom: 72px;
+}
+
+.title span{
+  color: #64CCC5;
+}
+
+.mayl {
+  margin: 72px 0 33px;
+}
+
+.cont
+{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+
+}
+
+.cont::before
+{
+  content:"";
+  width: 70px;
+  height: 70px;
+  background-image: url(../img/mayl.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cont:nth-child(3)::before
+{
+  background-image: url(../img/tel.svg);
+}
+
+.cont:nth-child(4)::before
+{
+  background-image: url(../img/loc.svg);
+}
+
+
+.num {
+
+  margin-bottom: 33px;
+}
+
+.loc {
+  margin-bottom: 72px;
+}
+.wrapper {
+  max-width: 255px;
+}
+
+.card
+{
+  width: 100%;
+  max-width: 631px;
+  min-height: 700px;
+  padding: 50px 35px;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+
+
+
+
+input {
+   display: none;
+}
+
+
+.segmented-control {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
+.segmented-control-inner
+{
+  padding: 10px 20px ;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #787878;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 1px solid #787878;
+  transition: all .5s ease;
+}
+
+.chesk:checked + .segmented-control-inner
+{
+  background: #176B87;
+  color: #fff;
+  border: 1px solid #176B87;
+}
+
+
+
+
+
+
+
+
+
+.group 			  { 
+  width: 100%;
+  position:relative; 
+  margin-bottom:45px; 
+}
+.data			{
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #787878;
+  padding:12px 16px ;
+  display:block;
+  border:none;
+  border-bottom:1px solid #757575;
+
+}
+
+.data
+
+.data:focus{ outline:none; }
+
+/* LABEL ======================================= */
+.group label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:20px;
+  transition:0.2s ease all; 
+
+}
+
+.data:focus ~ label, .data:valid ~ label 		{
+  top: -15px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #176B87;
+
+}
+
+
+.bar 	{ position:relative; display:block; width:100%; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+.data:focus ~ .bar:before, .data:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+
+
+/* active state */
+.data:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+
+
+
+
